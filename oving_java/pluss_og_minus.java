@@ -1,4 +1,4 @@
-public class plus_og_minus {
+public class pluss_og_minus {
     public static void main (String[] args) {
         int zebrasInZoo = 8;
         int giraffesInZoo = 4;
