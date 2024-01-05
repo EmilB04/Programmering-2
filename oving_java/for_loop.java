@@ -4,3 +4,4 @@ public class for_loop {
             System.out.println("Tallet er " + i);
     }
 }
+    
