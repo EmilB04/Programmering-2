@@ -5,13 +5,13 @@ public class guess {
         //make random number
         // from 1 to 100
         int number = (int)(Math.random() * 100 + 1);
-        Scanner input = new Scanner(System.in);
+        Scanner userInput = new Scanner(System.in);
         
         System.out.println("Guess a magic number between 1 and 100");
         int number_of_guesses = 1;
         int user_guess;
         while (true) {
-            user_guess = input.nextInt();
+            user_guess = userInput.nextInt();
             if (user_guess == number) {
                 System.out.println("You guessed correctly!");
                 break;
