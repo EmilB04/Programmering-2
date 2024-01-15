@@ -1,4 +1,4 @@
-public class Oppgave_2_2 {
+public class Oppgave2_2 {
     public static void main(String[] args){
         int minVekt = 75;
         double minMåneVekt = 0; // Definerer en variabel for senere bruk
