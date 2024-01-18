@@ -27,5 +27,7 @@ public class ClassesAndObjects {
         course.courseName = "Programmering 2";
         course.courseCode = "ITF10619";
         course.studyPoints = 15;
+
+        student1.printStudentInfo();
     }
 }

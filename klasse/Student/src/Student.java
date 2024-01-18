@@ -5,4 +5,8 @@ public class Student {
     public String lastName;
     public int age;
     public String studentId;
+
+    public void printStudentInfo() {
+        System.out.println(firstName + " " + lastName + " is " + age + " years old, with the student id of: " + studentId);
+    }
 }
