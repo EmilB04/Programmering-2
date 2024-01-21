@@ -7,8 +7,8 @@ public class Oppgave2_3 {
 
         // Skriver ut informasjon om planetene
         skrivUtInformasjon(mars);
-        skrivUtInformasjon(jupiter);
-        skrivUtInformasjon(earth);
+        skrivUtInformasjon(jupiter);    
+        skrivUtInformasjon(earth);  
     }
 
     // Metode for å skrive ut informasjon om en planet

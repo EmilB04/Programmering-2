@@ -10,6 +10,11 @@ public class Planet {
         this.masse = masse;
     }
 
+    //-----------------------
+    // Gettere og settere
+    //-----------------------
+
+
     // Get metoder her:
     public String getNavn() {
         return navn;
