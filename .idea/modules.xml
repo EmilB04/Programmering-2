@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/klasse/Private_Student/Private_Student.iml" filepath="$PROJECT_DIR$/klasse/Private_Student/Private_Student.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Programmering-2.iml" filepath="$PROJECT_DIR$/Programmering-2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/klasse/Student/Student.iml" filepath="$PROJECT_DIR$/klasse/Student/Student.iml" />
+      <module fileurl="file://$PROJECT_DIR$/grunnleggende_konsepter/grunnleggende_konsepter.iml" filepath="$PROJECT_DIR$/grunnleggende_konsepter/grunnleggende_konsepter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oblig1/oblig1.iml" filepath="$PROJECT_DIR$/oblig1/oblig1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/package_import/package_import.iml" filepath="$PROJECT_DIR$/package_import/package_import.iml" />
+    </modules>
+  </component>
+</project>
