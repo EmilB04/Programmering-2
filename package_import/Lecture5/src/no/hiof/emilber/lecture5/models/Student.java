@@ -7,6 +7,19 @@ public class Student {
     private String studentId;
     private String birthNumber = "13060667589";
 
+    public Student() {
+    }
+
+    public Student(String firstName, String lastName, int age, String studentId) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.studentId = studentId;
+    }
+
+
+
+
     public String getFirstName() {
         return firstName;
     }
@@ -48,7 +61,7 @@ public class Student {
 
 
 
-    
+
     public void printStudentInfo() {
         System.out.println(
                 firstName + " " + lastName + " is " + age + " years old, with the student id of: " + studentId);

@@ -15,5 +15,9 @@ public class Encapsulation {
 
         student1.setAge(23);
         System.out.println(student1.getAge());
+
+        System.out.println();
+        Student student2 = new Student("Emil", "Berglund", 19, "123456");
+        System.out.println(student2.getFirstName());
     }
 }
