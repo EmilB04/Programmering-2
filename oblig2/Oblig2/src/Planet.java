@@ -12,12 +12,19 @@ public class Planet {
     public String getName() {
         return name;
     }
-
     public double getRadius() {
         return radius;
     }
-
     public double getMass() {
         return mass;
     }
+
+    public double getRadiusInKilometers() {
+        return radius * 71492; // 1 Rjup = 71492 km
+    }
+    public double getMassInKilograms() {
+        return mass * 1.898e27; // 1 Mjup = 1.898E27 kg
+    }
+
+
 }

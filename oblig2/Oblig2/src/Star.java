@@ -14,16 +14,20 @@ public class Star {
     public String getName() {
         return name;
     }
-
     public double getRadius() {
         return radius;
     }
-
     public double getMass() {
         return mass;
     }
-
     public double getEffectiveTemp() {
         return effectiveTemp;
+    }
+
+    public double getRadiusInKilometers() {
+        return radius * 695700; // 1 Rsun = 695700 km
+    }
+    public double getMassInKilograms() {
+        return mass * 1.98892e30; // 1 Msun = 1.98892E30 kg
     }
 }

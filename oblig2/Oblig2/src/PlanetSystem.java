@@ -1,9 +1,11 @@
+import java.util.List;
+
 public class PlanetSystem {
     private String name;
-    private String centerStar;
-    private Planet[] planets;
+    private Star centerStar;      //Henter stjerne fra Star.java
+    private List<Planet> planets; //forventer en list med planeter 
 
-    public PlanetSystem(String name, String centerStar, Planet[] planets) {
+    public PlanetSystem(String name, Star centerStar, List<Planet> planets) {
         this.name = name;
         this.centerStar = centerStar;
         this.planets = planets;
@@ -13,11 +15,11 @@ public class PlanetSystem {
         return name;
     }
 
-    public String getCenterStar() {
+    public Star getCenterStar() {
         return centerStar;
     }
 
-    public Planet[] getPlanets() {
-            return planets;
+    public List<Planet> getPlanets() {
+        return planets;
     }
 }
