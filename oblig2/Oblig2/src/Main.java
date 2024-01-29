@@ -25,8 +25,10 @@ public class Main {
         planets.add(neptune);
 
         PlanetSystem solarSystem = new PlanetSystem("The Milkyway", sun, planets);
+
         // --------------------------------------- //
         // Skriv ut informasjon om solsystemet her //
+
         System.out.println("---------------------------");
         System.out.println("Planets in " + solarSystem.getName() + ":");
         //  Klasse  objekt/variabel     metode
@@ -39,7 +41,13 @@ public class Main {
         // Skriv ut informasjon om vekt og masse her //
 
         System.out.println("Venus radius: " + venus.getRadiusInKilometers() + " km");
-        System.out.println("Venus masse: " + venus.getMassInKilograms() + " kg");
+        System.out.println("Venus mass: " + venus.getMassInKilograms() + " kg");
+        System.out.println("---------------------------");
+
+        // ----------------------------------------- //
+        // Skriv ut informasjon om gravitasjon her //
+        System.out.println("Saturn surface gravity: " + saturn.getSurfaceGravity() + " m/s^2");
+        System.out.println("---------------------------");
 
     }
 }

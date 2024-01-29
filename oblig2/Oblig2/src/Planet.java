@@ -26,5 +26,12 @@ public class Planet {
         return mass * 1.898e27; // 1 Mjup = 1.898E27 kg
     }
 
+    // Return Surface gravity in m/s^2
 
+    public double getSurfaceGravity() {
+        double G = 6.67408e-11;
+        double M = getMassInKilograms();
+        double R = getRadiusInKilometers();
+        return G * M / (R * R);
+    }
 }
