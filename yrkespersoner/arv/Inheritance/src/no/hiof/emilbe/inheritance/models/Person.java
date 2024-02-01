@@ -21,4 +21,7 @@ public class Person {
     public int getAge(){
         return age;
     }
+    public void printDescription(){
+        System.out.println(firstName + " " + lastName + " er " + age + " år gammel.");
+    }
 }
