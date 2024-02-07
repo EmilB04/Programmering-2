@@ -26,26 +26,55 @@ public class Main {
 
         PlanetSystem solarSystem = new PlanetSystem("The Milkyway", sun, planets);
 
+        // Oppgave 2.3 - ToString()
+
         // --------------------------------------- //
         // Skriv ut informasjon om solsystemet her //
 
+        System.out.println("Info om solsystem:---------");
+        System.out.println(solarSystem);
         System.out.println("---------------------------");
-        System.out.println("Planets in " + solarSystem.getName() + ":");
-        //  Klasse  objekt/variabel     metode
-        for (Planet planet : solarSystem.getPlanets()) {
-            System.out.println(planet.getName());
-        }
+
+        // --------------------------------------- //
+        // Skriv ut informasjon om planetene her //
+        System.out.println();
+        System.out.println("Info om planeter:---------");
+        System.out.println(mercury);
+        System.out.println(venus);
+        System.out.println(earth);
+        System.out.println(mars);
+        System.out.println(jupiter);
+        System.out.println(saturn);
+        System.out.println(uranus);
+        System.out.println(neptune);
         System.out.println("---------------------------");
+
+        // --------------------------------------- //
+        // Skriv ut informasjon om sola her //
+        System.out.println();
+        System.out.println("Info om stjerne:-----------");
+        System.out.println(sun);
+        System.out.println("---------------------------");
+
+
+        // Oppgave 2.4 - Astronomiske begreper til matematiske uttrykk
+        // Se <Planet.java>
 
         // ----------------------------------------- //
         // Skriv ut informasjon om vekt og masse her //
-
+        System.out.println();
+        System.out.println("Info om radius:------------");
         System.out.println("Venus radius: " + venus.getRadiusInKilometers() + " km");
         System.out.println("Venus mass: " + venus.getMassInKilograms() + " kg");
         System.out.println("---------------------------");
 
+        // Oppgave 2.5 - Beregning av overflategravitasjon
+        // Se <Planet.java>
+
         // ----------------------------------------- //
         // Skriv ut informasjon om gravitasjon her //
+        System.out.println();
+        System.out.println("Info om gravitasjon:-------");
         System.out.println("Saturn surface gravity: " + saturn.getSurfaceGravity() + " m/s^2");
         System.out.println("---------------------------");
 

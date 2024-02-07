@@ -19,19 +19,25 @@ public class Planet {
         return mass;
     }
 
-    public double getRadiusInKilometers() {
-        return radius * 71492; // 1 Rjup = 71492 km
-    }
-    public double getMassInKilograms() {
-        return mass * 1.898e27; // 1 Mjup = 1.898E27 kg
+    @Override
+    public String toString() {
+        return "Planeten " + name + " har en radius på " + getRadiusInKilometers() + " km" + " og en masse på " + getMassInKilograms() + " kg.";
     }
 
-    // Return Surface gravity in m/s^2
+    public double getRadiusInKilometers() {
+        double rjup = 71492e3;
+        return radius * rjup; // 1 Rjup = 71492E3 km
+    }
+    public double getMassInKilograms() {
+        double mjup = 1.898e27;
+        return mass * mjup; // 1 Mjup = 1.898E27 kg
+    }
 
     public double getSurfaceGravity() {
         double G = 6.67408e-11;
         double M = getMassInKilograms();
         double R = getRadiusInKilometers();
-        return G * M / (R * R);
+        G = G * M / (R * R);
+        return G;
     }
 }

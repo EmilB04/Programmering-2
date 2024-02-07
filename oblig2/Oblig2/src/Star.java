@@ -10,6 +10,11 @@ public class Star {
         this.mass = mass;
         this.effectiveTemp = effectiveTemp;
     }
+    @Override
+    public String toString() {
+        return "Stjernen " + name + " har en radius på " + getRadiusInKilometers() + " km." + ", en masse på " + getMassInKilograms() + " kg." + 
+        " og en effektiv temperatur på " + effectiveTemp + " K.";
+    }
 
     public String getName() {
         return name;
@@ -25,9 +30,11 @@ public class Star {
     }
 
     public double getRadiusInKilometers() {
-        return radius * 695700; // 1 Rsun = 695700 km
+        double rsun = 695700;
+        return radius * rsun; // 1 Rsun = 695700 km
     }
     public double getMassInKilograms() {
-        return mass * 1.98892e30; // 1 Msun = 1.98892E30 kg
+        double msun = 1.98892e30;
+        return mass * msun; // 1 Msun = 1.98892E30 kg
     }
 }

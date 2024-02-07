@@ -10,6 +10,10 @@ public class PlanetSystem {
         this.centerStar = centerStar;
         this.planets = planets;
     }
+    @Override
+    public String toString() {
+        return ("Solsystemet " + name + " har " + planets.size() + " planeter og en stjerne som heter " + centerStar.getName() + ".");
+    }
 
     public String getName() {
         return name;
