@@ -8,6 +8,10 @@ public class Planet {
         this.radius = radius;
         this.mass = mass;
     }
+    @Override
+    public String toString() {
+        return "Planeten " + name + " har en radius på " + getRadiusInKilometers() + " km" + " og en masse på " + getMassInKilograms() + " kg.";
+    }
 
     public String getName() {
         return name;
@@ -19,10 +23,6 @@ public class Planet {
         return mass;
     }
 
-    @Override
-    public String toString() {
-        return "Planeten " + name + " har en radius på " + getRadiusInKilometers() + " km" + " og en masse på " + getMassInKilograms() + " kg.";
-    }
 
     public double getRadiusInKilometers() {
         double rjup = 71492e3;
