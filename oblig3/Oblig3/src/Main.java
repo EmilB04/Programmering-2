@@ -81,5 +81,13 @@ public class Main {
         System.out.println("Saturn surface gravity: " + saturn.getSurfaceGravity() + " m/s^2");
         System.out.println("---------------------------");
 
+
+
+
+        // Oblig 3 - Oppgave 2.2 - Hent en planet med navn
+        // Se <PlanetSystem.java>
+        System.out.println();
+        System.out.println("Henter planet med navn:----");
+        System.out.println(solarSystem.getPlanetByName("Venus"));
     }
 }

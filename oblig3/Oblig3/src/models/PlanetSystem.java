@@ -28,4 +28,22 @@ public class PlanetSystem {
     public List<Planet> getPlanets() {
         return planets;
     }
+
+    // Oblig 3 - Oppgave 2.2 - Navn
+    public Planet getPlanetByName(String name) {
+        boolean foundPlanet = false;
+        for (Planet planetX : planets) {
+            if (planetX.getName().equals(name)) {
+                foundPlanet = true;
+                return planetX; // Returner planeten hvis navnet matcher
+            }
+        }
+        if (foundPlanet == false) {
+            System.out.println("Fant ingen planeter med navn " + "'" + name + "'");
+        }
+        return null;
+    }
+
+
+
 }
