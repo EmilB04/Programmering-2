@@ -11,7 +11,7 @@ public class CelestialBody {
         this.radius = radius;
         this.mass = mass;
     }
-
+    
     // Metoder som brukes av både planeter og stjerner
 
     public String getName() {
