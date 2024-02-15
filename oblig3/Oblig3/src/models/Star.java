@@ -8,11 +8,14 @@ public class Star extends CelestialBody{
         super(name, radius, mass);   
         this.effectiveTemp = effectiveTemp;
     }
+
+
     @Override
     public String toString() {
         return "Stjernen " + name + " har en radius på " + getRadiusInKilometers() + " km." + ", en masse på " + getMassInKilograms() + " kg." + 
         " og en effektiv temperatur på " + effectiveTemp + " K.";
     }
+    
     // Spesifikk metode for stjerner
 
     public double getEffectiveTemp() {

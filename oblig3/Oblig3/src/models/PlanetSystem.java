@@ -20,11 +20,9 @@ public class PlanetSystem {
     public String getName() {
         return name;
     }
-
     public Star getCenterStar() {
         return centerStar;
     }
-
     public List<Planet> getPlanets() {
         return planets;
     }
