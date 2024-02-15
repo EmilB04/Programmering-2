@@ -1,6 +1,7 @@
 package no.hiof.emilbe.inheritance.models;
 
 public class Person {
+    public static char[] numPersons;
     protected String firstName;
     protected String lastName;
     protected int age;

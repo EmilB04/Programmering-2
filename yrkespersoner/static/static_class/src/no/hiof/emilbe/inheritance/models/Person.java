@@ -2,7 +2,9 @@ package no.hiof.emilbe.inheritance.models;
 
 public class Person {
 
-    public static int numPersons = 0;
+    // Denne skal økes med 1 hver gang vi lager et nytt Person-objekt
+    //public static int numPersons = 0;
+    private static int numPersons = 0;
 
     protected String firstName;
     protected String lastName;
@@ -13,6 +15,12 @@ public class Person {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
+
+        // Øker numPersons med 1 hver gang vi lager et nytt Person-objekt
+        numPersons++;
+    }
+    public static int getNumPersons() {
+        return numPersons;
     }
 
     public void compareAgeWith(Person person) {
@@ -57,4 +65,5 @@ public class Person {
     public void printDescription(){
         System.out.println(firstName + " " + lastName + " er " + age + " år gammel.");
     }
+    
 }
