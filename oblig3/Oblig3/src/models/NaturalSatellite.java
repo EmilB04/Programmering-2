@@ -1,18 +1,27 @@
 package models;
 
-public class NaturalSatellite {
-    private double semiMajorAxis;
-    private double eccentricity;
-    private double orbitalPeriod;
-    private CelestialBody centralCelestialBody; //Hvilken planet/måne går denne rundt
+// Oppgave 2.4 - Naturlig satelitt og arv
+
+
+public abstract class NaturalSatellite extends CelestialBody  {
+    private final double semiMajorAxis; // Avstand 
+    private final double eccentricity; // Et desimal mellom 0 og 1
+    private final double orbitalPeriod; // Dager
+    private final CelestialBody centralCelestialBody; //Hvilken planet/måne går denne rundt
 
 
 
-    public NaturalSatellite(double semiMajorAxis, double eccentricity, double orbitalPeriod, CelestialBody centralCelestialBody) {
+    public NaturalSatellite(String name, double radius, double mass, double semiMajorAxis, double eccentricity, double orbitalPeriod, CelestialBody centralCelestialBody) {
+        super(name, radius, mass);
         this.semiMajorAxis = semiMajorAxis;
         this.eccentricity = eccentricity;
         this.orbitalPeriod = orbitalPeriod;
         this.centralCelestialBody = centralCelestialBody;
+    }
+    
+    @Override
+    public String toString() {
+        return "Naturlig satellitt med semiMajorAxis " + semiMajorAxis + " km, eccentricity " + eccentricity + " og orbitalPeriod " + orbitalPeriod + " dager. Den går rundt " + centralCelestialBody.getName() + ".";
     }
 
     // Gettere og settere
@@ -27,19 +36,6 @@ public class NaturalSatellite {
     }
     public CelestialBody getCentralCelestialBody() {
         return centralCelestialBody;
-    }
-
-    public void setSemiMajorAxis(double semiMajorAxis) {
-        this.semiMajorAxis = semiMajorAxis;
-    }
-    public void setEccentricity(double eccentricity) {
-        this.eccentricity = eccentricity;
-    }
-    public void setOrbitalPeriod(double orbitalPeriod) {
-        this.orbitalPeriod = orbitalPeriod;
-    }
-    public void setCentralCelestialBody(CelestialBody centralCelestialBody) {
-        this.centralCelestialBody = centralCelestialBody;
     }
 
 

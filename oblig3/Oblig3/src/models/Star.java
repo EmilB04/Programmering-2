@@ -1,6 +1,8 @@
 package models;
 
 public class Star extends CelestialBody{
+    private final static double RSUN_IN_KM = 695700;
+    private final static double MSUN_IN_KG = 1.989e30;
     private double effectiveTemp;
 
     // Arver fra CelestialBody
@@ -20,5 +22,14 @@ public class Star extends CelestialBody{
 
     public double getEffectiveTemp() {
         return effectiveTemp;
+    }
+
+    
+    public double getRadiusInKilometers() {
+        return radius * RSUN_IN_KM; 
+    }
+
+    public double getMassInKilograms() {
+        return mass * MSUN_IN_KG; 
     }
 }
