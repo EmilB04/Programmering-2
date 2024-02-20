@@ -13,5 +13,9 @@ public class Main {
 
         double resultInMeter2 = UnitConverter.kmToMeter(3);
         System.out.println(resultInMeter2);
+
+        // Math klassen
+
+        System.out.println(Math.sqrt(9));
     }
 }
