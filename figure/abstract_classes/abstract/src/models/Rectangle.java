@@ -9,6 +9,14 @@ public class Rectangle extends Figure {
         this.length = length;
         this.width = width;
     }
+    @Override
+    public double circumference() {
+        return (length + width);
+    }
+    @Override
+    public double area() {
+        return (length * width);
+    }
 
     public double getLength() {
         return length;

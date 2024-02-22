@@ -7,6 +7,10 @@ public abstract class Figure {
         this.color = color;
     }
 
+    // Abstrakte metoder - metoder som ikke har en implementasjon
+    public abstract double circumference();
+    public abstract double area();
+
 
     public String getColor() {
         return color;
