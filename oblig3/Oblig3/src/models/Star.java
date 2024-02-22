@@ -19,16 +19,14 @@ public class Star extends CelestialBody{
     }
     
     // Spesifikk metode for stjerner
-
     public double getEffectiveTemp() {
         return effectiveTemp;
     }
 
-    
+    // Abstrakte metoder fra CelestialBody
     public double getRadiusInKilometers() {
         return radius * RSUN_IN_KM; 
     }
-
     public double getMassInKilograms() {
         return mass * MSUN_IN_KG; 
     }

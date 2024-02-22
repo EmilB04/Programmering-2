@@ -14,7 +14,7 @@ public class Planet extends NaturalSatellite {
     }
 
     
-    // Spesifikk metoder for planeter
+    // Spesifikk metode for planeter
     public double getSurfaceGravity() {
         double G = 6.67408e-11;
         double M = getMassInKilograms();
@@ -23,6 +23,7 @@ public class Planet extends NaturalSatellite {
         return G;
     }
 
+    // Abstrakte metoder fra CelestialBody
     public double getRadiusInKilometers() {
         return radius * RJUP_IN_KM; // 1 Rjup = 71492E3 km
     }

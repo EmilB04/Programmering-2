@@ -18,11 +18,6 @@ public abstract class NaturalSatellite extends CelestialBody  {
         this.orbitalPeriod = orbitalPeriod;
         this.centralCelestialBody = centralCelestialBody;
     }
-    
-    @Override
-    public String toString() {
-        return "Naturlig satellitt med semiMajorAxis " + semiMajorAxis + " km, eccentricity " + eccentricity + " og orbitalPeriod " + orbitalPeriod + " dager. Den går rundt " + centralCelestialBody.getName() + ".";
-    }
 
     // Gettere og settere
     public double getSemiMajorAxis() {
