@@ -11,7 +11,7 @@ public class Rectangle extends Figure {
     }
     @Override
     public double circumference() {
-        return (length + width);
+        return (2 * (length + width));
     }
     @Override
     public double area() {
