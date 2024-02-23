@@ -92,7 +92,29 @@ public class Main {
         System.out.println("Henter planet med navn:----");
         System.out.println(solarSystem.getPlanetByName("Venus"));
 
+        // Oblig 3 - Oppgave 2.6 - Avstand
+        // Se <Planet.java>
         System.out.println();
+        int[] distanceAngles = {0, 90, 180, 270, 360 };
+        for (double angle : distanceAngles) {
+            double distance = earth.getDistanceToCentralBody(angle);
+            System.out.println("Distance between Earth and Sun at " + (int)angle + " degrees: " + (int)distance + " km.");
+        }
+
+        // Oblig 3 - Oppgave 2.7 - Hastighet
+        // Se <Planet.java>
+        System.out.println();
+        int[] speedAngles = {0, 45, 90, 135, 180};
+        for (double angle : speedAngles) {
+            double distance = earth.getDistanceToCentralBody(angle);
+            double velocity = earth.getOrbitingVelocity(distance);
+            // begrens til 2 desimaler
+            velocity = Math.round(velocity * 100.0) / 100.0;
+            System.out.println("Velocity of Earth at " + (int)angle + " degrees: " + velocity + " km/s.");
+
+
+            
+        }
     }
 
     }   
