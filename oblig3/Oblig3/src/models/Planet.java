@@ -3,7 +3,7 @@ package models;
 public class Planet extends NaturalSatellite {
     private final static double RJUP_IN_KM = 71492e3;
     private final static double MJUP_IN_KG = 1.898e27;
-    private static final double AU_TO_KM = 149597871.0; // konsant
+    private final static double AU_TO_KM = 149597871.0;
 
     public Planet(String name, double radius, double mass, double semiMajorAxis, double eccentricity, double orbitalPeriod, Star centralCelestialBody) {
         super(name, radius, mass, semiMajorAxis, eccentricity, orbitalPeriod, centralCelestialBody);
