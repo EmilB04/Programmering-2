@@ -8,10 +8,6 @@ public class Circle extends Figure{
         this.radius = radius;
     }
     @Override
-    public String toString() {
-        return "Sirkelen har en radius på " + radius + " og er " + getColor();
-    }
-    @Override
     public double circumference() {
         return (2 * Math.PI * radius);
     }
