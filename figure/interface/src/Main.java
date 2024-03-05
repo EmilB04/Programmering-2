@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 import interfaces.Drawable;
 import models.Circle;
@@ -29,12 +30,28 @@ public class Main {
         }
 
         ArrayList<Figure> figures = new ArrayList<>();
-        figures.add(rectangle1);
         figures.add(circle1);
+        figures.add(rectangle1);
 
         System.out.println("\n");
         for (Figure figureX : figures) {
-            System.out.println(figureX);
+            if (figureX instanceof Rectangle) {
+                System.out.println("Rectangle: " + figureX.area());
+            }
+            else {
+                System.out.println("Circle: " + figureX.area());
+            }
+        }
+
+        Collections.sort(figures);
+
+        System.out.println("\n-----Sorted list-----");
+        for (Figure figureX : figures) {
+            if (figureX instanceof Rectangle) {
+                System.out.println("Rectangle: " + figureX.area());
+            } else {
+                System.out.println("Circle: " + figureX.area());
+            }
         }
     }
 }
