@@ -19,12 +19,13 @@ public class Rectangle extends Figure {
     }
     @Override
     public String getDrawing() {
-        return "----------------\n" +
-               "|              |\n" +
-               "|              |\n" +
-               "|              |\n" +
-               "----------------\n";
+        return  "----------------\n" +
+                "|              |\n" +
+                "|              |\n" +
+                "|              |\n" +
+                "----------------\n";
     }
+    //compareTo
 
     public double getLength() {
         return length;
