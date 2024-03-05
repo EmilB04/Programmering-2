@@ -15,6 +15,16 @@ public class Circle extends Figure{
     public double area() {
         return (Math.PI * (radius * radius));
     }
+    @Override
+    public String getDrawing() {
+        return "     * * *  \n" +
+                "  *         * \n" +
+                "*             *\n" +
+                "*             *\n" +
+                "*             *\n" +
+                "  *         * \n" +
+                "     * * *  \n";
+    }
 
     public double getRadius() {
         return radius;
@@ -22,4 +32,5 @@ public class Circle extends Figure{
     public void setRadius(double radius) {
         this.radius = radius;
     }
+
 }

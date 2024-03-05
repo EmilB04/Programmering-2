@@ -17,6 +17,14 @@ public class Rectangle extends Figure {
     public double area() {
         return (length * width);
     }
+    @Override
+    public String getDrawing() {
+        return "----------------\n" +
+               "|              |\n" +
+               "|              |\n" +
+               "|              |\n" +
+               "----------------\n";
+    }
 
     public double getLength() {
         return length;
