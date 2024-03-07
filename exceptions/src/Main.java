@@ -12,10 +12,19 @@ public class Main{
     public static void fileWritingFromInput(String fileName) {
         try (FileWriter fileWriter = new FileWriter(fileName, true);
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));){
-            
-            System.out.print("Din input her: ");
-            String inputText = bufferedReader.readLine();
-            fileWriter.append(inputText);
+
+            while (true) {
+                System.out.print("Din input her: ");
+                String inputText = bufferedReader.readLine();
+
+                if (inputText.equals("quit") || inputText.equals("avslutt")) {
+                    break;
+                }
+                else {
+                    fileWriter.append(inputText + "\n");
+                }
+                System.out.println("Skriv en av de oppgitte utrykkene for og avslutte: 'quit' eller 'avslutt'");
+            }
         }
         catch (IOException e) {
             System.err.println(e.getMessage());
