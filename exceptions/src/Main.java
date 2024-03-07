@@ -7,12 +7,9 @@ public class Main{
     }
 
     public static void simpleFileWriting(String fileName) {
-        try {
-            FileWriter fileWriter = new FileWriter(fileName);
-
-            fileWriter.append("something..");
-
-            fileWriter.close();
+        try (FileWriter fileWriter = new FileWriter(fileName, false)) {
+            fileWriter.append("something..\n");
+            fileWriter.append("something else...\n");
         }
 
         catch (IOException e) {
