@@ -1,4 +1,4 @@
-package no.hiof.larseknu.models;
+package models;
 
 public abstract class CelestialBody {
     private String name;

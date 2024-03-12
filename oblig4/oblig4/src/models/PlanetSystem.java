@@ -1,4 +1,4 @@
-package no.hiof.larseknu.models;
+package models;
 
 import java.util.ArrayList;
 
