@@ -1,33 +1,36 @@
-package models;
+package no.hiof.larseknu.models;
 
 public class Star extends CelestialBody{
-    private final static double RSUN_IN_KM = 695700;
-    private final static double MSUN_IN_KG = 1.989e30;
     private double effectiveTemp;
 
-    // Arver fra CelestialBody
+    public static final double SOLAR_RADIUS_IN_KM = 695700;
+    public static final double SOLAR_MASS_IN_KG = 1.98892E30;
+
     public Star(String name, double radius, double mass, double effectiveTemp) {
-        super(name, radius, mass);   
+        super(name, radius, mass);
         this.effectiveTemp = effectiveTemp;
     }
 
+    @Override
+    public double getRadiusInKm() {
+        return getRadius() * SOLAR_RADIUS_IN_KM;
+    }
 
     @Override
-    public String toString() {
-        return "Stjernen " + name + " har en radius på " + getRadiusInKilometers() + " km." + ", en masse på " + getMassInKilograms() + " kg." + 
-        " og en effektiv temperatur på " + effectiveTemp + " K.";
+    public double getMassInKg() {
+        return getMass() * SOLAR_MASS_IN_KG;
     }
-    
-    // Spesifikk metode for stjerner
+
     public double getEffectiveTemp() {
         return effectiveTemp;
     }
 
-    // Abstrakte metoder fra CelestialBody
-    public double getRadiusInKilometers() {
-        return radius * RSUN_IN_KM; 
+    public void setEffectiveTemp(double effectiveTemp) {
+        this.effectiveTemp = effectiveTemp;
     }
-    public double getMassInKilograms() {
-        return mass * MSUN_IN_KG; 
+
+    @Override
+    public String toString() {
+        return String.format("%s has a radius of %s Rsun, a mass of %s Msun and a effective temperature of %.0f K", getName(), getRadius(), getMass(), effectiveTemp);
     }
 }

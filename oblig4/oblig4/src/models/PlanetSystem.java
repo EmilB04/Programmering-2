@@ -1,47 +1,94 @@
-package models;
+package no.hiof.larseknu.models;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class PlanetSystem {
     private String name;
-    private Star centerStar;      //Henter stjerne fra Star.java
-    private List<Planet> planets; //forventer en list med planeter 
+    private Star centerStar;
+    private ArrayList<Planet> planets = new ArrayList<>();
 
-    public PlanetSystem(String name, Star centerStar, List<Planet> planets) {
+    public PlanetSystem(String name, Star centerStar) {
         this.name = name;
         this.centerStar = centerStar;
-        this.planets = planets;
     }
-    @Override
-    public String toString() {
-        return ("Solsystemet " + name + " har " + planets.size() + " planeter og en stjerne som heter " + centerStar.getName() + ".");
+
+    public Planet getPlanet(String name) {
+        for (Planet aPlanet : planets ) {
+            if (aPlanet.getName().equalsIgnoreCase(name)) {
+                return aPlanet;
+            }
+        }
+
+        return null;
+    }
+
+    public Planet getSmallestPlanet() {
+        if (planets.size() == 0)
+            return null;
+
+        Planet smallestPlanet = planets.get(0);
+
+        for (Planet currentPlanet : planets) {
+            if (currentPlanet.getRadius() < smallestPlanet.getRadius()) {
+                smallestPlanet = currentPlanet;
+            }
+            else if (currentPlanet.getRadius() == smallestPlanet.getRadius() &&
+                    currentPlanet.getMass() < smallestPlanet.getMass()) {
+                smallestPlanet = currentPlanet;
+            }
+        }
+
+        return smallestPlanet;
+    }
+
+    public Planet getLargestPlanet() {
+        if (planets.size() == 0)
+            return null;
+
+        Planet largestPlanet = planets.get(0);
+
+        for (Planet currentPlanet : planets) {
+            if (currentPlanet.getRadius() > largestPlanet.getRadius()) {
+                largestPlanet = currentPlanet;
+            }
+            else if (currentPlanet.getRadius() == largestPlanet.getRadius() &&
+                    currentPlanet.getMass() > largestPlanet.getMass()) {
+                largestPlanet = currentPlanet;
+            }
+        }
+
+        return largestPlanet;
+    }
+
+    public void addPlanet(Planet aPlanet) {
+        planets.add(aPlanet);
+    }
+
+    public ArrayList<Planet> getPlanets() {
+        return new ArrayList<>(planets);
     }
 
     public String getName() {
         return name;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public Star getCenterStar() {
         return centerStar;
     }
-    public List<Planet> getPlanets() {
-        return planets;
+
+    public void setCenterStar(Star centerStar) {
+        this.centerStar = centerStar;
     }
 
-    // Oblig 3 - Oppgave 2.2 - Navn
-    public Planet getPlanetByName(String name) {
-        boolean foundPlanet = false;
-        for (Planet planetX : planets) {
-            if (planetX.getName().equals(name)) {
-                foundPlanet = true;
-                return planetX; // Returner planeten hvis navnet matcher
-            }
-        }
-        if (foundPlanet == false) {
-            System.out.println("Fant ingen planeter med navn " + "'" + name + "'");
-        }
-        return null;
+    // Object.java
+    @Override
+    public String toString() {
+        return name + " has " + planets.size() +
+                " planets that revolve around the star " +
+                centerStar.getName();
     }
-
-
-
 }
