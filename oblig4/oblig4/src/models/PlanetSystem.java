@@ -2,7 +2,7 @@ package models;
 
 import java.util.ArrayList;
 
-public class PlanetSystem {
+public class PlanetSystem implements Comparable<PlanetSystem> {
     private String name;
     private Star centerStar;
     private ArrayList<Planet> planets = new ArrayList<>();
@@ -10,6 +10,12 @@ public class PlanetSystem {
     public PlanetSystem(String name, Star centerStar) {
         this.name = name;
         this.centerStar = centerStar;
+    }
+
+    // Comparable-interfacet, returner sortert planetliste basert på navn
+    @Override
+    public int compareTo(PlanetSystem other) {
+        return this.name.compareTo(other.name);
     }
 
     public Planet getPlanet(String name) {
@@ -84,11 +90,4 @@ public class PlanetSystem {
         this.centerStar = centerStar;
     }
 
-    // Object.java
-    @Override
-    public String toString() {
-        return name + " has " + planets.size() +
-                " planets that revolve around the star " +
-                centerStar.getName();
-    }
 }

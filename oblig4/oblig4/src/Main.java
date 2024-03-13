@@ -1,4 +1,7 @@
 
+import java.util.Collections;
+
+import models.CelestialBody;
 import models.Planet;
 import models.PlanetSystem;
 import models.Star;
@@ -30,53 +33,7 @@ public class Main {
         Planet uranus = solarSystem.getPlanet("Uranus");
         Planet neptune = solarSystem.getPlanet("Neptune");
 
-        System.out.println(sun.toString());
-        System.out.println(venus);
-        System.out.printf("%s has a radius of %skm and a mass of %skg %n",
-                venus.getName(), venus.getRadiusInKm(), venus.getMassInKg());
-        System.out.printf("%s has a radius of %skm and a mass of %skg %n",
-                saturn.getName(), saturn.getRadiusInKm(), saturn.getMassInKg());
+        
 
-        System.out.printf("%s has a radius of %skm and a mass of %skg %n",
-                sun.getName(), sun.getRadiusInKm(), sun.getMassInKg());
-
-        System.out.printf("%s has a radius of %s Rearth and a mass of %s Mearth %n",
-                mars.getName(), mars.getRadiusInRearth(), mars.getMassInMearth());
-
-        System.out.println("Saturn gravity " + saturn.getSurfaceGravity() + " m/s²");
-        System.out.println("Neptune gravity " + neptune.getSurfaceGravity() + " m/s²");
-
-        System.out.println("Smallest: " + solarSystem.getSmallestPlanet());
-        System.out.println("Largest: " + solarSystem.getLargestPlanet());
-
-
-        // Oppgave 2.5
-        System.out.println("\n********************Orbital Distance************************");
-        for (int i = 0; i <= 360; i += 90) {
-            double distance = earth.distanceToCentralBody(i);
-            System.out.printf("%s has a distance of %.0fkm to the %s at %d degrees%n", earth.getName(), distance, earth.getCentralCelestialBody().getName(), i);
-        }
-
-        System.out.printf("%s has a distance of %.0fkm to the %s at %f radians%n", earth.getName(), earth.distanceToCentralBodyWithRadians(0.5), earth.getCentralCelestialBody().getName(), 0.5);
-
-
-        System.out.println("\n********************Orbital Velocity************************");
-        for (int i = 0; i <= 180; i += 45) {
-            double distance = earth.distanceToCentralBody(i);
-            double velocity = earth.orbitingVelocity(distance);
-            System.out.printf("At a distance of %.0fkm, %s has a velocity of %.2fkm/s%n", distance, earth.getName(), velocity);
-        }
-
-        System.out.println("\n********************Maximum Distance************************");
-        System.out.printf("%s has a max distance of %.0fkm%n", earth.getName(),earth.getMaxDistanceInOneOrbitalPeriod());
-
-        System.out.println("\n********************Minimum Distance************************");
-        System.out.printf("%s has a max distance of %.0fkm%n", earth.getName(),earth.getMinDistanceInOneOrbitalPeriod());
-
-
-        System.out.println("\n********************Distance between two natural satellites************************");
-        int day = 180;
-        double distance = earth.distanceToOtherSatelliteAfterDays(saturn, day);
-        System.out.printf("The distance between %s and %s at day %d is %.0fkm", earth.getName(), saturn.getName(), day, distance);
     }
 }
