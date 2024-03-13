@@ -3,6 +3,7 @@ import models.Planet;
 import models.PlanetSystem;
 import models.Star;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Main {
     public static void main(String[] args) {
@@ -30,90 +31,22 @@ public class Main {
         planets.add(neptune);
 
         PlanetSystem solarSystem = new PlanetSystem("The Milkyway", sun, planets);
-        // Oppgave 2.3 - ToString()
-
-        // --------------------------------------- //
-        // Skriv ut informasjon om solsystemet her //
-
-        System.out.println("Info om solsystem:---------");
-        System.out.println(solarSystem);
-        System.out.println("---------------------------");
-
-        // --------------------------------------- //
-        // Skriv ut informasjon om planetene her //
-        System.out.println();
-        System.out.println("Info om planeter:---------");
-        System.out.println(mercury);
-        System.out.println(venus);
-        System.out.println(earth);
-        System.out.println(mars);
-        System.out.println(jupiter);
-        System.out.println(saturn);
-        System.out.println(uranus);
-        System.out.println(neptune);
-        System.out.println("---------------------------");
-
-        // --------------------------------------- //
-        // Skriv ut informasjon om sola her //
-        System.out.println();
-        System.out.println("Info om stjerne:-----------");
-        System.out.println(sun);
-        System.out.println("---------------------------");
 
 
-        // Oppgave 2.4 - Astronomiske begreper til matematiske uttrykk
-        // Se <Planet.java>
+        // Sortering av planeter basert på radius - CelesialBody implementerer Comparable
 
-        // ----------------------------------------- //
-        // Skriv ut informasjon om vekt og masse her //
-        System.out.println();
-        System.out.println("Info om radius:------------");
-        System.out.println("Venus radius: " + venus.getRadiusInKilometers() + " km");
-        System.out.println("Venus mass: " + venus.getMassInKilograms() + " kg");
-        System.out.println("---------------------------");
-
-        // Oppgave 2.5 - Beregning av overflategravitasjon
-        // Se <Planet.java>
-
-        // ----------------------------------------- //
-        // Skriv ut informasjon om gravitasjon her //
-        System.out.println();
-        System.out.println("Info om gravitasjon:-------");
-        System.out.println("Saturn surface gravity: " + saturn.getSurfaceGravity() + " m/s^2");
-        System.out.println("---------------------------");
-
-        //------------------------------------------//
-        // ---------  Oblig 3 starter her --------- //
-        //------------------------------------------//
-
-        // Oblig 3 - Oppgave 2.2 - Hent en planet med navn
-        // Se <PlanetSystem.java>
-        System.out.println();
-        System.out.println("Henter planet med navn:----");
-        System.out.println(solarSystem.getPlanetByName("Venus"));
-
-        // Oblig 3 - Oppgave 2.6 - Avstand
-        // Se <Planet.java>
-        System.out.println();
-        int[] distanceAngles = {0, 90, 180, 270, 360 };
-        for (double angle : distanceAngles) {
-            double distance = earth.getDistanceToCentralBody(angle);
-            System.out.println("Distance between Earth and Sun at " + (int)angle + " degrees: " + (int)distance + " km.");
+        System.out.println("Planetenes radius før sortering:");
+        for (Planet PlanetX : solarSystem.getPlanets()) {
+            System.out.println(PlanetX.getRadiusInKilometers());
         }
 
-        // Oblig 3 - Oppgave 2.7 - Hastighet
-        // Se <Planet.java>
-        System.out.println();
-        int[] speedAngles = {0, 45, 90, 135, 180};
-        for (double angle : speedAngles) {
-            double distance = earth.getDistanceToCentralBody(angle);
-            double velocity = earth.getOrbitingVelocity(distance);
-            // begrens til 2 desimaler
-            velocity = Math.round(velocity * 100.0) / 100.0;
-            System.out.println("Velocity of Earth at " + (int)angle + " degrees: " + velocity + " km/s.");
+        // Metoden som sorterer planetene
+        Collections.sort(planets);
+        System.out.println("");
 
-
-            
+        System.out.println("Planetenes radius etter sortering:");
+        for (Planet PlanetX : solarSystem.getPlanets()) {
+            System.out.println(PlanetX.getRadiusInKilometers());
         }
     }
 

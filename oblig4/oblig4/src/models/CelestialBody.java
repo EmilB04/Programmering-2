@@ -10,7 +10,7 @@ CelestialBody
     └── Planet
  */
 
-public abstract class CelestialBody {
+public abstract class CelestialBody implements Comparable<CelestialBody> {
     protected final String name;
     protected final double radius;
     protected final double mass;
@@ -20,6 +20,14 @@ public abstract class CelestialBody {
         this.radius = radius;
         this.mass = mass;
     }
+
+    @Override
+    public int compareTo(CelestialBody other) {
+        return Double.compare(this.mass, other.mass);
+    }
+
+
+
     // Metoder som brukes av både planeter og stjerner
 
     public String getName() {
