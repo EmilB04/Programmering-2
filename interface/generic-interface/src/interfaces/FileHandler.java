@@ -1,6 +1,7 @@
 package interfaces;
 
-public interface FileHandler {
-    void writeToFile(String fileName, String content);
-    String readFromFile(String fileName);
+// Generisk interface
+public interface FileHandler<T> {
+    void writeToFile(String fileName, T content);
+    T readFromFile(String fileName);
 }
