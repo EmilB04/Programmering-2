@@ -2,7 +2,7 @@ package models;
 
 import java.util.List;
 
-public class PlanetSystem {
+public abstract class PlanetSystem implements Comparable<PlanetSystem> {
     private String name;
     private Star centerStar;      //Henter stjerne fra Star.java
     private List<Planet> planets; //forventer en list med planeter 
@@ -16,6 +16,15 @@ public class PlanetSystem {
     public String toString() {
         return ("Solsystemet " + name + " har " + planets.size() + " planeter og en stjerne som heter " + centerStar.getName() + ".");
     }
+
+    // Sorter planter basert på 
+    /*
+     * @Override
+     * public String compareTo(PlanetSystem other) {
+     * return String.compareTo(this.name, other.name);
+     * }
+     */
+    
 
     public String getName() {
         return name;

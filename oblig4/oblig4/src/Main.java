@@ -34,6 +34,7 @@ public class Main {
 
 
         // Sortering av planeter basert på radius - CelesialBody implementerer Comparable
+        // Oppgave 2.1
 
         System.out.println("Planetenes radius før sortering:");
         for (Planet PlanetX : solarSystem.getPlanets()) {
@@ -48,6 +49,8 @@ public class Main {
         for (Planet PlanetX : solarSystem.getPlanets()) {
             System.out.println(PlanetX.getRadiusInKilometers());
         }
+
+        // Sortering av planeter basert på 
     }
 
     }   
