@@ -1,3 +1,9 @@
 {
-    "java.debug.settings.onBuildFailureProceed": true
+    "java.debug.settings.onBuildFailureProceed": true,
+    "java.project.sourcePaths": [
+        "oblig4/oblig4/src",
+        "interface/generic-interface/src",
+        "byggeverktøy_gradle/app/src/main/java/byggeverktøy_gradle"
+    ],
+    "java.configuration.updateBuildConfiguration": "automatic"
 }
