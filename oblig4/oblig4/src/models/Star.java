@@ -27,7 +27,13 @@ public class Star extends CelestialBody{
     public double getRadiusInKilometers() {
         return radius * RSUN_IN_KM; 
     }
+    public double getRadius() {
+        return radius;
+    }
     public double getMassInKilograms() {
         return mass * MSUN_IN_KG; 
+    }
+    public double getMass() {
+        return mass;
     }
 }

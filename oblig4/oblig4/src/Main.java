@@ -1,7 +1,8 @@
 //import models.CelestialBody;
 import models.Planet;
-import models.PlanetSystem;
 import models.Star;
+import tools.StarCSVFileHandler;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -55,6 +56,20 @@ public class Main {
             System.out.println(star.getName() + " - Radius: " + star.getRadiusInKilometers());
         }
 
-    }
 
-    }   
+        //----------------------------------
+        // ---------- Oppgave 2.2 ----------
+        //----------------------------------
+
+        // Skriv stjernene til en CSV-fil
+        StarCSVFileHandler starCSVFileHandler = new StarCSVFileHandler();
+        starCSVFileHandler.writeObjectsToFile("stars.csv", stars);
+
+        // Les stjernene fra CSV-fil
+        ArrayList<Star> starsFromFile = (ArrayList<Star>) starCSVFileHandler.readObjectsFromFile("stars.csv");
+        System.out.println("\nStars from file:");
+        for (Star starX : starsFromFile) {
+            System.out.println(starX.getName() + " - Radius: " + starX.getRadiusInKilometers());
+        }
+    }
+}   
