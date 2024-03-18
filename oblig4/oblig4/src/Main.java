@@ -8,6 +8,8 @@ import java.util.Collections;
 public class Main {
     public static void main(String[] args) {
         Star sun = new Star("Sun", 1.0, 1.0, 5778);
+        Star alphaCentauri = new Star("Alpha Centauri", 1.227, 1.1, 5790);
+        Star sirius = new Star("Sirius", 1.711, 2.02, 9940);
 
         Planet mercury = new Planet("Mercury", 0.03412549655905556, 1.7297154899894627E-4, 0.387, 0.206, 88 , sun);
         Planet venus = new Planet("Venus", 0.08465003077267387, 0.002564278187565859, 0.723, 0.007, 225 , sun);
@@ -18,9 +20,9 @@ public class Main {
         Planet uranus = new Planet("Uranus", 0.35475297935433336, 0.04573761854583773, 19.2184, 0.046, 30660 , sun);
         Planet neptune = new Planet("Neptune", 0.34440217087226543, 0.05395152792413066, 30.11, 0.010, 60225, sun);
 
+        //PlanetSystem solarSystem = new PlanetSystem("The Milkyway", sun, planets);
         ArrayList<Planet> planets = new ArrayList<>(); // Create an empty list for celestial bodies
 
-        // Add celestial bodies to the list
         planets.add(mercury);
         planets.add(venus);
         planets.add(earth);
@@ -30,27 +32,29 @@ public class Main {
         planets.add(uranus);
         planets.add(neptune);
 
-        PlanetSystem solarSystem = new PlanetSystem("The Milkyway", sun, planets);
+        ArrayList<Star> stars = new ArrayList<>();
+        stars.add(sun);
+        stars.add(alphaCentauri);
+        stars.add(sirius);
 
 
-        // Sortering av planeter basert på radius - CelesialBody implementerer Comparable
-        // Oppgave 2.1
 
-        System.out.println("Planetenes radius før sortering:");
-        for (Planet PlanetX : solarSystem.getPlanets()) {
-            System.out.println(PlanetX.getRadiusInKilometers());
-        }
-
-        // Metoden som sorterer planetene
+        // Sorter planetene basert på massen ved hjelp av Collections.sort() og compareTo-metoden
         Collections.sort(planets);
-        System.out.println("");
-
-        System.out.println("Planetenes radius etter sortering:");
-        for (Planet PlanetX : solarSystem.getPlanets()) {
-            System.out.println(PlanetX.getRadiusInKilometers());
+        // Skriv ut de sorterte planetene
+        System.out.println("Sorted planets based on mass:");
+        for (Planet planet : planets) {
+            System.out.println(planet.getName() + " - Mass: " + planet.getMassInKilograms());
         }
 
-        // Sortering av planeter basert på 
+        // Sorter stjernene basert på radius ved hjelp av Collections.sort() og compareTo-metoden
+        Collections.sort(stars);
+        // Skriv ut de sorterte stjernene
+        System.out.println("\nSorted stars based on radius:");
+        for (Star star : stars) {
+            System.out.println(star.getName() + " - Radius: " + star.getRadiusInKilometers());
+        }
+
     }
 
     }   

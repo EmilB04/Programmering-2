@@ -17,13 +17,10 @@ public abstract class PlanetSystem implements Comparable<PlanetSystem> {
         return ("Solsystemet " + name + " har " + planets.size() + " planeter og en stjerne som heter " + centerStar.getName() + ".");
     }
 
-    // Sorter planter basert på 
-    /*
-     * @Override
-     * public String compareTo(PlanetSystem other) {
-     * return String.compareTo(this.name, other.name);
-     * }
-     */
+    @Override
+    public int compareTo(PlanetSystem other) {
+        return this.getName().compareTo(other.getName());
+    }
     
 
     public String getName() {

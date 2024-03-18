@@ -15,6 +15,11 @@ public abstract class NaturalSatellite extends CelestialBody {
         this.centralCelestialBody = centralCelestialBody;
     }
 
+    @Override
+    public int compareTo(CelestialBody other) {
+        return Double.compare(this.mass, other.mass);
+    }
+
     // Getters
     public double getSemiMajorAxis() {
         return semiMajorAxis;

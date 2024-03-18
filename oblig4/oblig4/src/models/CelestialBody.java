@@ -23,7 +23,7 @@ public abstract class CelestialBody implements Comparable<CelestialBody> {
 
     @Override
     public int compareTo(CelestialBody other) {
-        return Double.compare(this.mass, other.mass);
+        return Double.compare(this.radius, other.radius);
     }
 
 
