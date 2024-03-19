@@ -19,12 +19,13 @@ repositories {
 dependencies {
     // Use JUnit Jupiter for testing.
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
-
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:31.1-jre'
-
     // Implement Jackson for JSON handling.
     implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.16.0' 
+    // Implement Javalin
+    implementation 'io.javalin:javalin:6.1.3'
+    implementation 'org.slf4j:slf4j-simple:2.0.7'
 }
 
 application {

@@ -11,6 +11,13 @@ public class SuperHero {
         this.name = name;
         this.realName = realName;
     }
+<<<<<<< HEAD
+=======
+
+    public SuperHero() {
+        sideKicks = new ArrayList<>();
+    }
+>>>>>>> 80797368650824a0bb5921d7ed69023c23379dfa
     
     public void setName(String name) {
         this.name = name;

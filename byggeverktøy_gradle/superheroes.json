@@ -1,0 +1,13 @@
+{
+  "name" : "Batman",
+  "realName" : "Bruce Wayne",
+  "sideKicks" : [ {
+    "name" : "Robin",
+    "realName" : "Jason Todd",
+    "sideKicks" : [ ]
+  }, {
+    "name" : "Batgirl",
+    "realName" : "Barbara Gordon",
+    "sideKicks" : [ ]
+  } ]
+}
