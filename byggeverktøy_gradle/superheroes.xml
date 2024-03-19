@@ -1,0 +1,16 @@
+<SuperHero>
+  <name>Batman</name>
+  <realName>Bruce Wayne</realName>
+  <sideKicks>
+    <sideKicks>
+      <name>Robin</name>
+      <realName>Jason Todd</realName>
+      <sideKicks/>
+    </sideKicks>
+    <sideKicks>
+      <name>Batgirl</name>
+      <realName>Barbara Gordon</realName>
+      <sideKicks/>
+    </sideKicks>
+  </sideKicks>
+</SuperHero>
