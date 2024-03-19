@@ -4,7 +4,7 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import java.io.File;
 import models.SuperHero;
 
-public class App {
+public class Main {
     public static void main(String[] args) {
         ObjectMapper objectMapper = new ObjectMapper();
 
