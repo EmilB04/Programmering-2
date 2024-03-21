@@ -3,17 +3,28 @@ import java.util.ArrayList;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
 import io.javalin.http.Handler;
+import io.javalin.vue.VueComponent;
 import models.SuperHero;
 
 public class Application {
     public static void main(String[] args) {
-        Javalin app = Javalin.create().start();
+
+        Javalin app = Javalin.create(JavalinConfig -> {
+            JavalinConfig.staticFiles.enableWebjars();
+            JavalinConfig.vue.vueInstanceNameInJs = "app";
+        }).start();
+
+        app.get("/", new VueComponent("hello-world"));
+        
+
+        /*
         app.get("/", new Handler() {
             @Override
             public void handle(Context ctx) throws Exception {
                 ctx.result("Hello Javalin!");
             }
         });
+        */
 
         app.get("/other-page", new Handler(){
             @Override
@@ -67,5 +78,7 @@ public class Application {
                 ctx.status(201).result("The superhero " + name + " was added to the list of superheroes.");
             }
         });
+
+        
     }
 }
