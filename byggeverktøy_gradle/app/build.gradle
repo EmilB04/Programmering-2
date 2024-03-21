@@ -26,6 +26,8 @@ dependencies {
     // Implement Javalin
     implementation 'io.javalin:javalin:6.1.3'
     implementation 'org.slf4j:slf4j-simple:2.0.7'
+    //Implement Vue.js
+    implementation 'org.webjars.npm:vue:3.2.47'
 }
 
 application {
