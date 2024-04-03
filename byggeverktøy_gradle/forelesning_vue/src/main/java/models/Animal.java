@@ -1,4 +1,4 @@
-package no.hiof.oleedvao.lecture21.models;
+package models;
 
 public abstract class Animal {
     private final int id;

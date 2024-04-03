@@ -1,5 +1,3 @@
-package no.hiof.oleedvao.lecture21;
-
 import io.javalin.Javalin;
 import io.javalin.vue.VueComponent;
 
