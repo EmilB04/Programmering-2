@@ -8,6 +8,7 @@ app.component("front-page", {
 </script>
 <style>
 .title {
-  color: maroon;
+  color: teal;
+  text-align: center;
 }
 </style>

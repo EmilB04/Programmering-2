@@ -27,5 +27,19 @@ app.component("zoo-detail", {
 <style>
 .list-element {
   color: darkblue;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
 }
+ul {
+  padding: 0;
+}
+h1{
+  text-align: center;
+}
+h2{
+  text-align: center;
+  color: teal;
+}
+
 </style>

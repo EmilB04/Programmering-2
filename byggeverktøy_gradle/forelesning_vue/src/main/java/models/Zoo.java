@@ -20,6 +20,7 @@ public class Zoo {
 
     public ArrayList<Animal> getAnimals() {
         return new ArrayList<Animal>(animals);
+        // Returnerer en kopi av animals slik at animals ikke kan endres utenfor Zoo-klassen
     }
 
     public void addAnimal(Animal animal) {
