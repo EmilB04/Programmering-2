@@ -1,9 +1,12 @@
 package no.hiof.oleedvao.lecture22;
 
 import no.hiof.oleedvao.lecture22.models.Album;
+import no.hiof.oleedvao.lecture22.interfaces.PrintCondition;
+import no.hiof.oleedvao.lecture22.interfaces.Action;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class Main {
     public static void main(String[] args) {
@@ -31,8 +34,66 @@ public class Main {
         System.out.println("-----------Standard, name sorted albums----------");
         Collections.sort(albums);
         printAlbums(albums);
+
+        System.out.println();
+        System.out.println("------------Albums sorted by year, ASC-----------");
+        Collections.sort(albums, new Comparator<Album>() {
+            @Override
+            public int compare (Album album1, Album album2){
+                return Integer.compare(album1.getYear(), album2.getYear());
+            }
+            
+        });
+        printAlbums(albums);
+
+        
+        System.out.println();
+        System.out.println("------------Albums sorted by year, ASC with lambda-----------");
+        Collections.sort(albums, (album1, album2) -> {
+                return Integer.compare(album1.getYear(), album2.getYear());
+            }
+        );
+
+        System.out.println();
+        System.out.println("------Albums starting with T-----");
+        printAlbumsConditionally(albums, new PrintCondition() {
+            @Override
+            public boolean met(Album album) {
+                return album.getTitle().startsWith("T");
+            }
+        });
+
+        System.out.println();
+        System.out.println("------Albums starting with T, with lambda-----");
+        printAlbumsConditionally(albums, album -> album.getTitle().startsWith("T"));
+
+        System.out.println();
+        System.out.println("------Albums after the year 2000, with lambda-----");
+        printAlbumsConditionally(albums, album -> album.getYear() > 2000);
+
+        System.out.println();
+        System.out.println("-----Print old albums-----");
+        doWithAlbumsConditionally(albums, album -> album.getYear() < 1970, album -> System.out.println(album.getTitle() + " is old but gold!"));
+
+        System.out.println();
+        System.out.println("----Print all albums---");
+        doWithAlbumsConditionally(albums, album -> true, album -> System.out.println(album));
     }
 
+    public static void printAlbumsConditionally(ArrayList<Album> albums, PrintCondition printCondition) {
+        for (Album albumX : albums) {
+            if (printCondition.met(albumX)) {
+                System.out.println(albumX);
+            }
+        }
+    }
+    public static void doWithAlbumsConditionally(ArrayList<Album> albums, PrintCondition printCondition, Action action) {
+        for (Album albumX : albums) {
+            if (printCondition.met(albumX)) {
+                action.perform(albumX);
+            }
+        }
+    }
     public static void printAlbums(ArrayList<Album> albums) {
         for (Album album : albums) {
             System.out.println(album);
