@@ -1,8 +1,9 @@
 import models.Reverse;
+import models.Bankkonto;
 import models.ListCare;
 
 public class Main {
-    public void main(String[] args) {
+    public static void main(String[] args) {
         // Skriv ut reversert streng
         String str = "Emil Berglund";
         System.out.println(str);
@@ -21,6 +22,10 @@ public class Main {
         System.out.println(listCare);
 
 
+        // Konto - Klasser og objekter
+        Bankkonto bankKonto = new Bankkonto("1084.74.84176", "Emil Berglund", 54_000);
+        System.out.println(bankKonto.getSaldo());
+        bankKonto.taUt(300);
 
         /*
          * Oppgave 3: Klasser og objekter
@@ -41,6 +46,4 @@ public class Main {
          * til riktig input er gitt, og skriv deretter ut tallet.
          */
     }
-
-
 }
