@@ -26,13 +26,10 @@ public class Main {
         Bankkonto bankKonto = new Bankkonto("1084.74.84176", "Emil Berglund", 54_000);
         System.out.println(bankKonto.getSaldo());
         bankKonto.taUt(300);
+        bankKonto.settInn(300);
+        System.out.println(bankKonto.getSaldo());
 
         /*
-         * Oppgave 3: Klasser og objekter
-         * Lag en Java-klasse som representerer en enkel bankkonto. Klassen skal ha
-         * følgende egenskaper: kontonummer, kontoeier, saldo. Implementer metoder for å
-         * sette inn penger på kontoen, ta ut penger fra kontoen og for å hente saldoen.
-         * 
          * Oppgave 4: Arv og polymorfisme
          * Lag et hierarki av klasser som representerer ulike typer kjøretøy, for
          * eksempel Bil, Lastebil, Motorsykkel osv. Implementer egenskaper og metoder
