@@ -12,7 +12,6 @@ public class LiveStream extends VisualMedia{
         this.startTime = starTime;
         this.endTime = endTime;
     }
-    
     public LocalDateTime getStarTime(){
         return startTime;
     }
@@ -25,4 +24,6 @@ public class LiveStream extends VisualMedia{
     public void setEndTime (LocalDateTime endTime) {
         this.endTime = endTime;
     }
+
+    public void LiveStreamConnection()
 }

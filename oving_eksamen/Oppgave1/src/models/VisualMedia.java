@@ -2,7 +2,7 @@ package models;
 
 import java.nio.channels.Channel;
 
-public class VisualMedia {
+public class VisualMedia implements Comparable<VisualMedia> {
     private String title;
     private double lengthInMinutes;
     private Channel channel;
@@ -11,6 +11,17 @@ public class VisualMedia {
         this.title = title;
         this.lengthInMinutes = lengthInMinutes;
         this.channel = channel;
+    }
+    
+    @Override
+    public int compareTo(VisualMedia other) {
+        if (this.lengthInMinutes > other.lengthInMinutes) {
+            return -1;
+        } else if (this.lengthInMinutes < other.lengthInMinutes) {
+            return 1;
+        } else {
+            return 0;
+        }
     }
 
     public String getTitle() {

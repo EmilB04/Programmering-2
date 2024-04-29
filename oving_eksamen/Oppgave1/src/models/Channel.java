@@ -7,11 +7,11 @@ public class Channel {
     public ArrayList<Object> visualMedias;
     public int videoViews;
 
-    public updateVideoViews(){
+    public void updateVideoViews(){
         int counter = 0;
         for (VisualMedia visualMediaX : visualMedias) {
             if (visualMediaX instanceof Video) {
-                counter += ((Video) visualMediaX).getViews()
+                counter += ((Video) visualMediaX).getViews();
             }
         }
     }
