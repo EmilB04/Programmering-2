@@ -22,7 +22,8 @@ public class Main {
 
                 if (inputText.equals("quit") || inputText.equals("avslutt")) {
                     break;
-                } else {
+                } 
+                else {
                     fileWriter.append(inputText + "\n");
                 }
                 System.out.println("Skriv en av de oppgitte utrykkene for og avslutte: 'quit' eller 'avslutt'");
